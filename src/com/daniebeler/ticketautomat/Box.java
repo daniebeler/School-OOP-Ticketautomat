@@ -50,9 +50,9 @@ public class Box {
         insertedTicket.setTimestampEnd(new Date().getTime());
 
         System.out.println("\nTicket information:");
-        System.out.println("ID: " + insertedTicket.getId());
-        System.out.println("Starttime: " + insertedTicket.getTimestampStart());
-        System.out.println("Endtime: " + insertedTicket.getTimestampEnd());
+        System.out.println("\tID: " + insertedTicket.getId());
+        System.out.println("\tTimestamp of ticketing: " + insertedTicket.getTimestampStart());
+        System.out.println("\tTimestamp of payment: " + insertedTicket.getTimestampEnd());
     }
 
     public float getPrice(){

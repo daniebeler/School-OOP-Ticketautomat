@@ -1,6 +1,5 @@
 package com.daniebeler.ticketautomat;
 
-import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Random;
 
@@ -8,7 +7,7 @@ public class Ticket {
 
     private int id;
     private long timestampStart;
-    private long timestampEnd;
+    private long timestampEnd = 0;
 
     public Ticket(){
         this.id = new Random().nextInt(100);

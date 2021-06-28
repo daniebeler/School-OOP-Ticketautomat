@@ -6,23 +6,21 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static Box box;
 
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
         List<Ticket> myOwnTickets = new ArrayList<>();
-        box = new Box();
+        Box box = new Box();
 
 
         while (true){
-            System.out.println("\n\n");
             System.out.println("What do you want to do?");
-            System.out.println("1 get new ticket");
-            System.out.println("2 insert ticket");
-            System.out.println("3 get the current price of the ticket");
-            System.out.println("4 pay the ticket");
+            System.out.println("\t1 get new ticket");
+            System.out.println("\t2 insert ticket");
+            System.out.println("\t3 get the current price of the ticket");
+            System.out.println("\t4 pay the ticket");
 
             switch (scanner.nextLine()){
                 case "1":
@@ -30,7 +28,7 @@ public class Main {
                     myOwnTickets.add(newTicket);
                     System.out.println("You just got your new ticket:");
                     System.out.println("\tID: " + newTicket.getId());
-                    System.out.println("\tStarttime: " + newTicket.getTimestampStart());
+                    System.out.println("\tTime of ticketing: " + newTicket.getTimestampStart());
                     break;
                 case "2":
 
@@ -65,16 +63,17 @@ public class Main {
                     if (box.getInsertedTicket() == null){
                         System.out.println("Please insert the ticket first!");
                     }
+                    else if(box.getInsertedTicket().getTimestampEnd() != 0){
+                        System.out.println("You already paid for this ticket!");
+                    }
                     else{
                         box.payTicket();
                     }
 
                     break;
             }
+
+            System.out.println("\n");
         }
-
-
-
-
     }
 }
